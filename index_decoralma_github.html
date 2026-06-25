@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Decoralma | Decoração com sua assinatura</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{--verde:#354020;--verde2:#536042;--bege:#f7f1e8;--bege2:#eee3d3;--marrom:#3b3228;--borda:#e6dbcf;--branco:#fffaf4}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Montserrat,Arial,sans-serif;color:var(--marrom);background:var(--branco);font-size:14px;padding-top:95px}button,a{cursor:pointer}.topbar{background:#273018;color:#fff;height:30px;display:flex;align-items:center;justify-content:space-around;font-size:12px;font-weight:600;position:fixed;top:0;left:0;width:100%;z-index:10000;transition:transform .35s ease}.header{height:95px;background:#fffaf6;display:flex;align-items:center;justify-content:space-between;padding:0 9%;border-bottom:1px solid #eee3d8;position:fixed;top:0;left:0;width:100%;z-index:9999;transition:transform .35s ease}.topbar.hide{transform:translateY(-100%)}.header.hide{transform:translateY(-130px)}.logo{display:flex;align-items:center}.logo-img{height:80px;width:auto;display:block}.logo .mark{font-family:Cormorant Garamond,serif;font-size:34px;color:#334021;font-weight:700}.logo small{font-size:11px;color:#5c594f}.leaf{font-size:26px;color:#566442}.nav{display:flex;gap:34px;align-items:center;font-size:13px;font-weight:600;text-transform:none}.nav a{color:#2f2b26;text-decoration:none}.nav a:hover,.nav .ativo{color:var(--verde2);border-bottom:1px solid var(--verde2);padding-bottom:4px}.icons{display:flex;gap:24px;font-size:40px;align-items:center}.search-icon{font-size:40px}.cart{position:relative;display:inline-flex;align-items:center}.bag-icon svg{width:32px;height:32px;fill:none;stroke:#2f2b26;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}.cart span{position:absolute;right:-10px;top:-10px;background:var(--verde2);color:white;border-radius:50%;font-size:11px;width:19px;height:19px;display:grid;place-items:center}.page{display:none}.page.active{display:block}.hero{min-height:485px;background:linear-gradient(90deg,rgba(250,246,239,.97) 0 36%,rgba(250,246,239,.65) 50%,rgba(250,246,239,.1)),url('topo.jpeg') center/cover;display:flex;align-items:center;padding:0 10%}.hero h1{font-family:Cormorant Garamond,serif;font-size:72px;line-height:.9;font-weight:600;max-width:460px}.hero p{margin:23px 0;line-height:1.6;max-width:395px;font-size:16px}.btn{border:1px solid var(--verde);background:var(--verde2);color:#fff;border-radius:30px;padding:13px 28px;font-size:12px;font-weight:700;text-decoration:none;display:inline-block}.btn.light{background:transparent;color:var(--marrom);margin-left:10px}.benefits{background:#f1e8dc;display:grid;grid-template-columns:repeat(5,1fr);padding:22px 9%;gap:20px;border-bottom:1px solid var(--borda)}.benefit{display:flex;align-items:center;gap:13px;font-size:12px;line-height:1.35}.benefit .ico{width:50px;height:50px;border:1px solid #887f73;border-radius:50%;display:grid;place-items:center;font-size:25px;background:#fbf6ef}.title{text-align:center;margin:28px 0 24px}.title h2{font-family:Cormorant Garamond,serif;font-size:40px;font-weight:600}.title p{font-size:13px}.collections{scroll-margin-top:180px;padding:0 7% 35px}.grid-col{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}.col-card{background:#fff;border:1px solid var(--borda);border-radius:8px;text-align:center;overflow:hidden;box-shadow:0 5px 20px rgba(70,50,20,.05);padding-bottom:18px}.col-card img{width:100%;height:245px;object-fit:cover}.col-card .icon{font-size:34px;margin:12px 0 3px}.col-card h3{font-family:Cormorant Garamond,serif;font-size:23px;font-weight:600;margin-bottom:15px}.col-card button{padding:9px 25px;background:var(--verde2);border:0;border-radius:20px;color:#fff;font-size:10px;font-weight:700}.create{background:#f0e5d7;min-height:275px;display:grid;grid-template-columns:1fr 1.6fr 1fr;align-items:center;gap:25px;padding:30px 9%}.create h2{font-family:Cormorant Garamond,serif;font-size:44px;line-height:.95}.create p{margin:15px 0;line-height:1.6}.create .mock{height:230px;background:url('https://images.unsplash.com/photo-1603204077779-bed963ea7d0e?auto=format&fit=crop&w=1000&q=80') center/cover;border-radius:10px}.create ul{list-style:none;display:grid;gap:18px}.create li{display:flex;gap:12px;align-items:flex-start}.insta{padding:0 7% 40px}.insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.insta-grid img{width:100%;height:160px;object-fit:cover;border-radius:8px}.footer{background:#f7f1e8;border-top:1px solid var(--borda);display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1.4fr;gap:35px;padding:42px 9%;font-size:12px}.footer h4{margin-bottom:14px}.footer a{display:block;margin:9px 0;color:#40372e;text-decoration:none}.footer input{padding:14px;border:1px solid #ddd;border-radius:5px;width:65%}.footer button{padding:14px 18px;border:0;background:var(--verde2);color:#fff;border-radius:20px;font-weight:700}.copy{text-align:center;background:#f7f1e8;padding:18px;border-top:1px solid var(--borda);font-size:12px}.banner{height:255px;background:linear-gradient(90deg,#fbf8f2 0 46%,rgba(255,255,255,.25)),url('https://images.unsplash.com/photo-1616046229478-9901c5536a45?auto=format&fit=crop&w=1800&q=80') center/cover;display:flex;align-items:center;padding:0 9%}.banner h1{font-family:Cormorant Garamond,serif;font-size:48px}.banner p{margin-top:15px;line-height:1.6;max-width:400px}.prod-area{padding:28px 8% 50px;background:#fffaf6}.prod-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px}.prod{position:relative}.prod img{width:100%;height:255px;object-fit:cover;border-radius:8px;background:#eee3d3}.heart{position:absolute;right:10px;top:10px;background:#fff;border-radius:50%;width:28px;height:28px;display:grid;place-items:center}.prod h4{margin-top:12px;font-size:13px;text-transform:uppercase}.prod strong{display:block;margin-top:6px}.detail{padding:32px 9%;display:grid;grid-template-columns:.55fr 1.05fr 1fr;gap:32px;align-items:start}.thumbs{display:grid;gap:10px}.thumbs img{width:70px;height:85px;object-fit:cover;border-radius:5px;border:1px solid var(--borda)}.main-img{background:#eee3d3;border-radius:10px;padding:22px;text-align:center}.main-img img{max-width:100%;height:540px;object-fit:cover;border-radius:6px}.info h1{font-size:30px;margin-bottom:12px}.price{font-size:24px;font-weight:700;margin-bottom:8px}.opts{margin:25px 0}.opts p{font-weight:700;margin:12px 0 9px}.opts button{border:1px solid #cfc5b8;background:white;padding:12px 18px;margin:3px;border-radius:4px}.qty{display:flex;gap:15px;margin:15px 0}.qty div{border:1px solid #ddd;display:flex;align-items:center;gap:22px;padding:10px 16px}.wide{width:100%;margin:7px 0;text-align:center}.text-page{padding:0;background:#fffaf6}.text-hero{min-height:250px;background:linear-gradient(90deg,rgba(247,241,232,.98) 0 52%,rgba(247,241,232,.35)),url('destopo.jpeg') center/cover;display:flex;align-items:center;padding:45px 12%;border-bottom:1px solid var(--borda)}.text-hero h1{font-family:Cormorant Garamond,serif;font-size:56px;font-weight:600;color:var(--verde);line-height:.95}.text-hero p{max-width:520px;margin-top:15px;line-height:1.7;font-size:15px}.text-box{background:transparent;border:0;padding:45px 9%;box-shadow:none;max-width:1180px;margin:auto;line-height:1.75}.text-box h1{font-family:Cormorant Garamond,serif;font-size:42px;margin-bottom:15px}.text-box h2{font-family:Cormorant Garamond,serif;font-size:34px;line-height:1.1;margin:18px 0 8px;color:var(--verde)}.text-box h3{margin-top:0;color:var(--verde);font-family:Cormorant Garamond,serif;font-size:27px;font-weight:700}.text-box ul{margin-left:20px}.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}.info-card{background:#fff;border:1px solid var(--borda);border-radius:18px;padding:25px;box-shadow:0 10px 30px rgba(80,60,30,.06)}.info-card.full{grid-column:1/-1}.info-card .mini{font-size:26px;margin-bottom:10px;color:var(--verde2)}.quote-box{background:#f0e5d7;border:1px solid #ded0bf;border-radius:22px;padding:28px;text-align:center;margin-top:25px}.quote-box h2{margin:0;font-size:31px;color:var(--marrom)}.empty{text-align:center;padding:70px}.structure{padding:35px 8%;background:#faf3eb}.structure h2{font-size:24px;margin-bottom:25px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.step{background:white;border-radius:50px;padding:24px;display:flex;gap:15px;align-items:center}.step b{display:block;margin-bottom:5px}.mobile-menu{display:none}
+.carousel-wrap{position:relative}.colecoes-scroll{display:flex;-ms-overflow-style:none;scrollbar-width:none;gap:16px;overflow-x:auto;scroll-behavior:smooth;padding:5px 2px 18px;scroll-snap-type:x mandatory}.colecoes-scroll::-webkit-scrollbar{display:none}.colecoes-scroll .col-card{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start}.colecoes-scroll .col-card img{height:185px}.colecoes-scroll .col-card h3{font-size:20px}.colecoes-scroll .col-card button{padding:8px 18px;font-size:9px}.seta{position:absolute;top:42%;transform:translateY(-50%);z-index:5;width:28px;height:28px;border:1px solid var(--borda);border-radius:50%;background:#fffaf6;color:var(--verde);font-size:22px;line-height:20px;box-shadow:0 4px 12px rgba(70,50,20,.12)}.seta-left{left:-12px}.seta-right{right:-12px}.arraste{text-align:center;font-size:12px;color:#6a5c4d;margin-top:-5px;display:block}
+@media(max-width:900px){body{padding-top:108px}.topbar{height:30px;gap:5px;padding:8px 5px;font-size:9px}.header{height:78px;padding:0 5%;top:30px}.logo .mark{font-size:26px}.nav{display:flex;position:absolute;top:78px;left:0;right:0;background:#fffaf6;flex-direction:row;align-items:center;justify-content:flex-start;overflow-x:auto;white-space:nowrap;padding:14px 5%;gap:24px;border-bottom:1px solid var(--borda);font-size:11px}.nav.show{display:flex}.mobile-menu{display:none;font-size:28px}.icons{gap:13px;font-size:21px}.hero{min-height:500px;padding:40px 6%;background:linear-gradient(180deg,rgba(250,246,239,.96) 0 45%,rgba(250,246,239,.15)),url('topo.jpeg') center/cover;align-items:flex-start}.hero h1{font-size:48px;margin-top:30px}.benefits{grid-template-columns:1fr 1fr;padding:18px 5%;gap:15px}.benefit{font-size:10px}.benefit .ico{width:42px;height:42px;font-size:20px}.grid-col{grid-template-columns:repeat(2,1fr);gap:14px}.colecoes-scroll{gap:8px;padding:4px 2px 14px}.colecoes-scroll .col-card{flex:0 0 calc((100% - 16px)/3);max-width:none}.colecoes-scroll .col-card img{height:105px}.colecoes-scroll .col-card .icon{font-size:22px;margin:7px 0 1px}.colecoes-scroll .col-card h3{font-size:13px;line-height:1.05;margin-bottom:8px;min-height:28px}.colecoes-scroll .col-card button{padding:7px 8px;font-size:7px}.seta{display:block;width:24px;height:24px;font-size:20px;line-height:16px}.seta-left{left:0}.seta-right{right:0}.arraste{display:block;font-size:11px}.collections{overflow:hidden;padding:0 4% 25px}.col-card img{height:185px}.col-card h3{font-size:19px}.create{grid-template-columns:1fr;padding:28px 6%;text-align:left}.create .mock{height:200px}.insta-grid{grid-template-columns:repeat(3,1fr);gap:8px}.insta-grid img{height:100px}.footer{grid-template-columns:1fr;padding:32px 7%}.prod-grid{grid-template-columns:repeat(2,1fr);gap:16px}.prod img{height:205px}.banner{height:230px;padding:0 6%}.banner h1{font-size:38px}.detail{grid-template-columns:1fr;padding:20px 5%}.thumbs{display:flex;overflow:auto}.main-img img{height:380px}.prod-head{font-size:12px}.steps{grid-template-columns:1fr}.title h2{font-size:33px}.text-hero{min-height:210px;padding:35px 6%;background:linear-gradient(180deg,rgba(247,241,232,.98) 0 58%,rgba(247,241,232,.4)),url('destopo.jpeg') center/cover}.text-hero h1{font-size:42px}.text-hero p{font-size:13px}.text-box{padding:25px 5%}.info-grid{grid-template-columns:1fr;gap:14px}.info-card{padding:20px}.quote-box{padding:22px}.quote-box h2{font-size:25px}.text-box h1,.text-box h2{font-size:32px}.btn.light{margin-left:0;margin-top:10px}}@media(min-width:901px) and (max-width:1200px){.grid-col{grid-template-columns:repeat(3,1fr)}.prod-grid{grid-template-columns:repeat(3,1fr)}}
+</style>
+<style id="topo-hide-fix">
+.header,.topbar{
+  transition:transform .35s ease!important;
+  will-change:transform;
+}
+.header.hide{
+  transform:translateY(-140px)!important;
+}
+.topbar.hide{
+  transform:translateY(-100%)!important;
+}
+@media(max-width:900px){
+  .header.hide{
+    transform:translateY(-140px)!important;
+  }
+  .topbar.hide{
+    transform:translateY(-100%)!important;
+  }
+}
+</style>
+<style id="topos-como-sobre-novo">
+#como .text-hero,
+#sobre .text-hero{
+  min-height:340px!important;
+  background:linear-gradient(90deg,rgba(247,241,232,.80) 0 35%,rgba(247,241,232,.20) 70%),url('destopo.jpeg') center/cover no-repeat!important;
+}
+@media(max-width:900px){
+  #como .text-hero,
+  #sobre .text-hero{
+    min-height:260px!important;
+    background:linear-gradient(180deg,rgba(247,241,232,.80) 0 40%,rgba(247,241,232,.20) 100%),url('destopo.jpeg') center/cover no-repeat!important;
+  }
+}
+</style>
+<style>
+/* Ajustes pedidos: remove a barrinha/texto abaixo dos destaques e reorganiza o rodapé */
+.arraste{display:none!important;}
+.colecoes-scroll{scrollbar-width:none!important;-ms-overflow-style:none!important;}
+.colecoes-scroll::-webkit-scrollbar{display:none!important;width:0!important;height:0!important;}
+.footer{grid-template-columns:1.5fr 1fr 1fr!important;}
+@media(max-width:900px){.footer{grid-template-columns:1fr!important;}}
+</style>
+<style id="nav-deslize-hide-fix">
+.nav{transition:transform .35s ease, opacity .35s ease!important;will-change:transform,opacity;}
+.nav.hide{transform:translateY(-140px)!important;opacity:0!important;pointer-events:none!important;}
+@media(max-width:900px){
+  .nav.hide{transform:translateY(-180px)!important;opacity:0!important;pointer-events:none!important;}
+}
+</style>
+</head>
+<body>
+<header class="header">
+<div class="logo" onclick="showPage('home')"><img alt="Decoralma" class="logo-img" src="logo.jpeg"/></div>
+<nav class="nav" id="nav">
+<a onclick="showPage('home')">Início</a>
+<a href="javascript:void(0)" onclick="centralizarColecoes()">Coleções</a>
+<a onclick="showPage('acessorios')">Acessórios</a>
+<a onclick="showPage('como')">Como funciona</a>
+<a onclick="showPage('sobre')">Sobre nós</a>
+<a href="#contato">Contato</a>
+</nav>
+<div class="icons"><span class="search-icon" onclick="abrirPesquisa()">⌕</span><span class="cart bag-icon" onclick="showPage('carrinho')"><svg aria-hidden="true" viewbox="0 0 24 24"><path d="M8 9V7.7a4 4 0 0 1 8 0V9"></path><path d="M6.8 9.2h10.4c.45 0 .82.34.87.79l.9 9.1c.06.52-.35.97-.87.97H5.9c-.52 0-.93-.45-.87-.97l.9-9.1c.05-.45.42-.79.87-.79Z"></path><path d="M9 12.2h.01M15 12.2h.01"></path></svg><span>0</span></span><span class="mobile-menu" onclick="toggleMenu()">☰</span></div>
+</header>
+<main class="page active" id="home">
+<section class="hero"><div><h1>Decoração<br/>com sua<br/>assinatura</h1><p>Peças exclusivas em MDF multicamada que transformam ambientes em experiências únicas.</p><a class="btn" onclick="irParaColecoesDestaque()">CONHEÇA AS COLEÇÕES</a> <a class="btn light" onclick="showPage('acessorios')">CRIE SUA ARTE</a></div></section>
+<section class="benefits"><div class="benefit"><span class="ico">❧</span><span>MDF Multicamada<br/>de alta qualidade</span></div><div class="benefit"><span class="ico">⌁</span><span>Corte a laser com<br/>acabamento preciso</span></div><div class="benefit"><span class="ico">♡</span><span>Produção artesanal<br/>com perfeição</span></div><div class="benefit"><span class="ico">✎</span><span>Opções prontas<br/>ou para pintar</span></div><div class="benefit"><span class="ico">▧</span><span>Embalagem segura<br/>e sustentável</span></div></section>
+<section class="collections" id="colecoesDestaque"><div class="title"><h2>Nossas Coleções</h2></div><div class="carousel-wrap"><button class="seta seta-left" onclick="scrollColecoes('homeCollections',-1)">‹</button><div class="grid-col colecoes-scroll" id="homeCollections"></div><button class="seta seta-right" onclick="scrollColecoes('homeCollections',1)">›</button></div></section>
+<section class="create"><div><h2>Crie sua<br/>própria arte</h2><p>Receba a peça em MDF multicamada e solte a criatividade com o nosso kit de pintura exclusivo.</p><a class="btn" onclick="showPage('como')">SAIBA MAIS</a></div><div class="mock"></div><ul><li>▧ Peça em MDF multicamada</li><li>🎨 Tintas nas cores primárias, branco e preto</li><li>✎ Pincel</li><li>☺ Diversão, criatividade e momentos únicos</li></ul></section>
+<section class="insta"><div class="title"><h2>Inspire-se</h2><p>Veja como nossos clientes estão transformando ambientes com Decoralma.</p></div><div class="insta-grid"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/><img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/><img src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/><img src="https://images.unsplash.com/photo-1618219944342-824e40a13285?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;w=700&amp;q=80"/></div></section>
+</main>
+<main class="page" id="colecoes"><section class="hero" style="min-height:400px;background:linear-gradient(90deg,rgba(250,246,239,.97) 0 45%,rgba(250,246,239,.15)),url('https://images.unsplash.com/photo-1603204077779-bed963ea7d0e?auto=format&amp;fit=crop&amp;w=1800&amp;q=80') center/cover"><div><h1>Decoração<br/>com sua assinatura.</h1><p>Quadros decorativos em MDF multicamadas para você pintar ou receber prontos.</p><a class="btn" onclick="irParaColecoesDestaque()">CONHEÇA AS COLEÇÕES</a></div></section><section class="benefits"><div class="benefit"><span class="ico">✎</span><span>Você pinta<br/>Seu momento criativo</span></div><div class="benefit"><span class="ico">▧</span><span>Pronto para decorar<br/>Peças leves e resistentes</span></div><div class="benefit"><span class="ico">❀</span><span>Feito com alma<br/>Produzido com carinho</span></div><div class="benefit"><span class="ico">♡</span><span>Sustentável<br/>Materiais responsáveis</span></div><div></div></section><section class="collections" id="nossas-colecoes"><div class="title"><h2>COLEÇÕES EM DESTAQUE</h2></div><div class="carousel-wrap"><button class="seta seta-left" onclick="scrollColecoes('allCollections',-1)">‹</button><div class="grid-col colecoes-scroll" id="allCollections"></div><button class="seta seta-right" onclick="scrollColecoes('allCollections',1)">›</button></div></section><section class="structure"><h2>COMO FUNCIONA</h2><div class="steps"><div class="step"><span>♡</span><p><b>ESCOLHA</b>Escolha seu quadro favorito.</p></div><div class="step"><span>▧</span><p><b>RECEBA EM CASA</b>Seu pedido chega com cuidado.</p></div><div class="step"><span>✎</span><p><b>PINTE E RELAXE</b>Use as tintas e crie sua obra.</p></div><div class="step"><span>▣</span><p><b>DECORE E CONECTE</b>Sinta orgulho da sua criação.</p></div></div></section></main>
+<main class="page" id="categoria"><section class="banner"><div><small>Início › Coleções ›</small><h1 id="catTitle">Vida Botânica</h1><p id="catDesc">A natureza como inspiração para transformar seus ambientes com leveza, harmonia e vida.</p></div></section><section class="prod-area"><div class="prod-head"><b id="countProd">5 produtos</b><label>Ordenar por <select><option>Mais vendidos</option><option>Menor preço</option></select></label></div><div class="prod-grid" id="products"></div></section></main>
+<main class="page" id="produto"><section class="detail"><div class="thumbs" id="thumbs"></div><div class="main-img"><img id="mainProductImg"/></div><div class="info"><small>Início › Coleções › Produto</small><h1 id="prodTitle">ENTRE FOLHAS</h1><div class="price" id="prodPrice">R$ 189,90</div><p>ou até 6x sem juros</p><p style="margin-top:18px;line-height:1.6">Quadro decorativo em MDF multicamadas para pintar ou receber pronto.</p><div class="opts"><p>TAMANHO</p><button>M (30x40cm)</button><button>G (40x60cm)</button><button>GG (60x90cm)</button><p>OPÇÃO</p><button>Para pintar (acompanha kit)</button><button>Pronto e pintado</button></div><small>Em estoque</small><div class="qty"><div><span>-</span><b>1</b><span>+</span></div></div><a class="btn wide">ADICIONAR AO CARRINHO</a><a class="btn light wide">COMPRAR AGORA</a><p style="margin-top:15px">♡ Adicionar aos favoritos</p></div></section></main>
+<main class="page" id="carrinho">
+<div style="padding:20px 8%">
+<button onclick="showPage('home')" style="padding:10px 18px;border:none;border-radius:25px;background:#536042;color:white;font-weight:bold;cursor:pointer">← Voltar</button>
+</div>
+<section class="prod-area">
+<div class="empty">
+<h2>Seu carrinho está vazio</h2>
+<p style="margin:15px 0 25px">Adicione uma peça das coleções para continuar.</p>
+<a class="btn" onclick="irParaColecoesDestaque()">VER COLEÇÕES</a>
+</div>
+</section>
+</main>
+<main class="page" id="pesquisa">
+<div style="padding:20px 8%">
+<button onclick="showPage('home')" style="padding:10px 18px;border:none;border-radius:25px;background:#536042;color:white;font-weight:bold;cursor:pointer">← Voltar</button>
+</div>
+<section class="prod-area">
+<div style="max-width:720px;margin:0 auto 30px;display:flex;gap:10px">
+<input id="campoPesquisa" oninput="pesquisarProdutos()" placeholder="Digite o que deseja buscar..." style="flex:1;padding:15px;border:1px solid #ddd;border-radius:30px;font-family:Montserrat"/>
+<button class="btn" onclick="pesquisarProdutos()">BUSCAR</button>
+</div>
+<div class="prod-grid" id="resultadoPesquisa"></div>
+</section>
+</main>
+<main class="page" id="acessorios"><section class="banner"><div><h1>Acessórios</h1><p>Kits de pintura, pincéis, tintas e peças para deixar sua experiência ainda mais criativa.</p></div></section><section class="prod-area"><div class="prod-grid" id="acessoriosGrid"></div></section></main>
+<main class="page text-page" id="como">
+<section class="text-hero"><div><h1>Como Funciona</h1><p>Escolha sua peça, receba do seu jeito e transforme a decoração em uma experiência criativa e cheia de significado.</p></div></section>
+<div class="text-box"><div class="info-grid">
+<div class="info-card"><div class="mini">01</div><h3>Escolha sua peça</h3><p>Navegue por nossas coleções e encontre o modelo que mais combina com você e com seu ambiente.</p></div>
+<div class="info-card"><div class="mini">🎨</div><h3>Para Pintar</h3><p>Receba sua peça em MDF multicamadas pronta para ganhar vida pelas suas mãos.</p><p><b>O kit acompanha:</b> tintas acrílicas nas cores primárias, branco e preto, pincel e peça em MDF multicamadas.</p></div>
+<div class="info-card"><div class="mini">🖼️</div><h3>Pintado pela Decoralma</h3><p>Se preferir, nossa equipe realiza toda a pintura e acabamento para você. Assim, sua peça chega pronta para decorar seu espaço.</p></div>
+<div class="info-card"><div class="mini">♡</div><h3>Divirta-se criando</h3><p>A versão para pintar foi desenvolvida para proporcionar momentos de relaxamento, criatividade e conexão. Não é necessário ter experiência com pintura.</p></div>
+<div class="info-card full"><div class="mini">✦</div><h3>Decore com significado</h3><p>Depois de finalizada, sua peça se transforma em um elemento decorativo exclusivo, feito por você ou especialmente para você. Cada quadro conta uma história e carrega um toque pessoal que nenhum produto industrializado consegue reproduzir.</p></div>
+</div><div class="quote-box"><h2>“Mais do que decoração, uma experiência criativa para sua casa.”</h2></div></div>
+</main>
+<main class="page text-page" id="sobre">
+<section class="text-hero"><div><h1>Sobre Nós</h1><p>Decoralma nasceu para transformar paredes em histórias e decoração em expressão pessoal.</p></div></section>
+<div class="text-box"><div class="info-grid">
+<div class="info-card full"><div class="mini">Nossa História</div><h3>Decoração com sua assinatura</h3><p>A Decoralma nasceu da vontade de transformar a decoração em algo mais pessoal, criativo e significativo.</p><p>Acreditamos que decorar um ambiente vai muito além de escolher um objeto bonito. É deixar um pouco de quem somos em cada espaço da casa.</p></div>
+<div class="info-card"><div class="mini">❧</div><h3>Arte em MDF multicamadas</h3><p>Criamos peças que unem arte, relaxamento e decoração. Cada quadro é pensado para proporcionar uma experiência única.</p></div>
+<div class="info-card"><div class="mini">✎</div><h3>Você escolhe a experiência</h3><p>Você pode pintar sua própria peça ou recebê-la pronta para decorar, com acabamento feito pela nossa equipe.</p></div>
+<div class="info-card full"><div class="mini">♡</div><h3>Um convite para desacelerar</h3><p>Na Decoralma, cada detalhe é um convite para desacelerar, criar e expressar sua personalidade.</p><h2>Decoralma. Decoração com sua assinatura.</h2></div>
+</div><div class="quote-box"><h2>“Você não compra apenas um quadro. Você cria uma história para pendurar na parede.” ✨</h2></div></div>
+</main>
+<footer class="footer" id="contato"><div><div class="logo"><img alt="Decoralma" class="logo-img" src="logo.jpeg"/></div><p style="margin-top:15px;line-height:1.6">Transformamos decoração em experiência através de peças exclusivas para inspirar, conectar e criar memórias.</p><p style="font-size:22px;margin-top:15px">◎ f ♡ ♪</p></div><div><h4>Institucional</h4><a onclick="showPage('sobre')">Sobre nós</a><a onclick="showPage('como')">Como funciona</a><a>Perguntas frequentes</a><a>Política de trocas</a></div><div><h4>Atendimento</h4><a>Contato</a><a>Acompanhe seu pedido</a><a>Trocas e devoluções</a><a>WhatsApp</a></div></footer><div class="copy">© 2024 Decoralma. Todos os direitos reservados.</div>
+<script>
+const imgs=['https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=700&q=80','https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80','https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&fit=crop&w=700&q=80','https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?auto=format&fit=crop&w=700&q=80','https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80','https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=700&q=80'];
+const collections=[['Vida Botânica','❧','A natureza como inspiração para transformar seus ambientes com leveza, harmonia e vida.'],['Maré Alta','〰','A força e calma do mar em peças decorativas.'],['Gratidão ao Tempo','◷','Relógios e arte para decorar com significado.'],['Segredos da Floresta','♞','Peças inspiradas nos animais e mistérios da floresta.'],['Criança Sem Tela','✋','Arte para pintar, brincar e criar memórias.'],['Vida de Pet','♧','Decoração afetiva para quem ama seus pets.']];
+const prodNames=['ENTRE FOLHAS','JARDIM SUSPENSO','FLORESCER','NATUREZA VIVA','FOLHAGEM TROPICAL'];
+function card(c,i){return `<div class="col-card"><img src="${imgs[i]}"><div class="icon">${c[1]}</div><h3>${c[0]}</h3><button onclick="openCat(${i})">VER COLEÇÃO</button></div>`}
+homeCollections.innerHTML=collections.map(card).join(''); allCollections.innerHTML=collections.map(card).join('');
+function irParaColecoesDestaque(){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('home').classList.add('active');
+  document.getElementById('nav').classList.remove('show');
+  setTimeout(()=>{
+    const sec=document.getElementById('colecoesDestaque');
+    if(sec){sec.scrollIntoView({behavior:'smooth',block:'start'});}
+  },80);
+}
+
+function abrirPesquisa(){
+  showPage('pesquisa');
+  setTimeout(()=>{const c=document.getElementById('campoPesquisa'); if(c){c.focus(); pesquisarProdutos();}},80);
+}
+function pesquisarProdutos(){
+  const termo=(document.getElementById('campoPesquisa')?.value || '').toLowerCase().trim();
+  const itens=[
+    ...collections.map((c,i)=>({nome:c[0],img:imgs[i],tipo:'Coleção',acao:`openCat(${i})`})),
+    ...['Kit de Tintas Acrílicas','Pincel Criativo','Mini Cavalete','Kit Para Pintar','Peça MDF Avulsa'].map((p,n)=>({nome:p,img:imgs[(n+1)%imgs.length],tipo:'Acessório',acao:''}))
+  ];
+  const filtrados=termo ? itens.filter(item=>item.nome.toLowerCase().includes(termo) || item.tipo.toLowerCase().includes(termo)) : itens;
+  resultadoPesquisa.innerHTML = filtrados.length ? filtrados.map(item=>`<div class="prod" ${item.acao ? `onclick="${item.acao}"` : ''}><span class="heart">♡</span><img src="${item.img}"><h4>${item.nome}</h4><strong>${item.tipo}</strong></div>`).join('') : '<div class="empty" style="grid-column:1/-1"><h2>Nenhum resultado encontrado</h2><p>Tente pesquisar por coleção, kit ou pintura.</p></div>';
+}
+
+function showPage(id){
+    const header=document.querySelector('.header');
+    if(id==='carrinho' || id==='pesquisa'){
+      if(header) header.style.display='none';
+    }else{
+      if(header) header.style.display='flex';
+    }
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');document.getElementById('nav').classList.remove('show');window.scrollTo(0,0)}
+function toggleMenu(){document.getElementById('nav').classList.toggle('show')}
+function openCat(i){catTitle.innerText=collections[i][0].toUpperCase();catDesc.innerText=collections[i][2];products.innerHTML=prodNames.map((p,n)=>`<div class="prod" onclick="openProd('${p}', '${imgs[(i+n)%imgs.length]}')"><span class="heart">♡</span><img src="${imgs[(i+n)%imgs.length]}"><h4>${p}</h4><strong>R$ 189,90</strong></div>`).join('');countProd.innerText='5 produtos';showPage('categoria')}
+function openProd(name,img){prodTitle.innerText=name;mainProductImg.src=img;thumbs.innerHTML=[0,1,2,3,4].map(n=>`<img onclick="mainProductImg.src=this.src" src="${imgs[n]}">`).join('');showPage('produto')}
+acessoriosGrid.innerHTML=['Kit de Tintas Acrílicas','Pincel Criativo','Mini Cavalete','Kit Para Pintar','Peça MDF Avulsa'].map((p,n)=>`<div class="prod"><span class="heart">♡</span><img src="${imgs[(n+1)%imgs.length]}"><h4>${p}</h4><strong>R$ ${(39+n*12)},90</strong></div>`).join('');
+function scrollColecoes(id,dir){const el=document.getElementById(id); if(el){el.scrollBy({left:dir*260,behavior:'smooth'});}}
+let lastScrollTop=0;
+const headerTop=document.querySelector('.topbar');
+const headerMain=document.querySelector('.header');
+const navBar=document.querySelector('.nav');
+window.addEventListener('scroll',()=>{
+  const currentScroll=window.pageYOffset || document.documentElement.scrollTop;
+  if(currentScroll > lastScrollTop && currentScroll > 90){
+    headerTop.classList.add('hide');
+    headerMain.classList.add('hide');
+    if(navBar) navBar.classList.add('hide');
+  }else{
+    headerTop.classList.remove('hide');
+    headerMain.classList.remove('hide');
+    if(navBar) navBar.classList.remove('hide');
+  }
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
+</script>
+<script id="topo-scroll-hide-script">
+document.addEventListener('DOMContentLoaded', function () {
+  const header = document.querySelector('.header');
+  const topbar = document.querySelector('.topbar');
+  const nav = document.querySelector('.nav');
+  let lastScroll = window.scrollY || document.documentElement.scrollTop;
+
+  function esconderTopo() {
+    if (header) header.classList.add('hide');
+    if (topbar) topbar.classList.add('hide');
+    if (nav) nav.classList.add('hide');
+  }
+
+  function mostrarTopo() {
+    if (header) header.classList.remove('hide');
+    if (topbar) topbar.classList.remove('hide');
+    if (nav) nav.classList.remove('hide');
+  }
+
+  window.addEventListener('scroll', function () {
+    const atual = window.scrollY || document.documentElement.scrollTop;
+
+    if (atual > 70 && atual > lastScroll) {
+      esconderTopo();
+    } else {
+      mostrarTopo();
+    }
+
+    lastScroll = atual <= 0 ? 0 : atual;
+  }, { passive: true });
+});
+</script>
+<script id="centralizar-colecoes-script">
+function centralizarColecoes(){
+  const secao = document.getElementById('nossas-colecoes');
+  if(!secao) return;
+  const top = secao.getBoundingClientRect().top + window.pageYOffset - (window.innerHeight / 3);
+  window.scrollTo({ top: top, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
