@@ -1,0 +1,48 @@
+{
+  "config": {
+    "whatsapp": "55SEUNUMERO",
+    "chavePix": "COLOQUE_A_CHAVE_PIX_AQUI",
+    "nomeLoja": "Decoralma"
+  },
+  "hero": {
+    "titulo": "Decoração<br>com sua<br>assinatura",
+    "texto": "Peças exclusivas em MDF multicamada que transformam ambientes em experiências únicas.",
+    "img": "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=1400&q=80"
+  },
+  "colecoes": [
+    {
+      "nome": "Vida Botânica",
+      "icone": "❧",
+      "desc": "A natureza como inspiração para transformar seus ambientes.",
+      "img": "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=700&q=80"
+    },
+    {
+      "nome": "Maré Alta",
+      "icone": "〰",
+      "desc": "A força e a calma do mar em peças decorativas.",
+      "img": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "ENTRE FOLHAS",
+      "preco": "R$ 189,90",
+      "colecao": 0,
+      "img": "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=700&q=80"
+    }
+  ],
+  "acessorios": [
+    {
+      "id": 1,
+      "nome": "Kit de Tintas Acrílicas",
+      "preco": "R$ 39,90",
+      "img": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=700&q=80"
+    }
+  ],
+  "inspire": [
+    "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=80",
+    "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=700&q=80"
+  ],
+  "pedidos": []
+}
