@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Decoralma</title>
+
+<style>
+:root{
+  --verde:#536042;
+  --verde-escuro:#354020;
+  --verde-claro:#eef3e6;
+  --bege:#fffaf4;
+  --bege2:#f5eadb;
+  --borda:#e6dbcf;
+  --marrom:#3b3228;
+  --branco:#ffffff;
+  --sombra:0 12px 35px rgba(72,55,34,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#fffaf4,#f4eadb);
+  color:var(--marrom);
+  min-height:100vh;
+}
+.login-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:22px;
+}
+.login-card{
+  width:100%;
+  max-width:430px;
+  background:rgba(255,255,255,.92);
+  border:1px solid var(--borda);
+  border-radius:30px;
+  padding:34px 28px;
+  box-shadow:var(--sombra);
+  text-align:center;
+}
+.login-logo{
+  width:95px;
+  height:95px;
+  object-fit:contain;
+  margin-bottom:10px;
+}
+.login-card h1{
+  font-family:Georgia,serif;
+  font-size:35px;
+  color:var(--verde-escuro);
+  margin-bottom:8px;
+}
+.login-card p{
+  font-size:13px;
+  line-height:1.6;
+  color:#6d6258;
+  margin-bottom:22px;
+}
+.login-card input{
+  width:100%;
+  padding:15px;
+  border:1px solid var(--borda);
+  border-radius:18px;
+  background:#fffaf6;
+  margin-bottom:11px;
+  outline:none;
+}
+.login-card button{
+  width:100%;
+  border:0;
+  background:var(--verde);
+  color:white;
+  padding:15px;
+  border-radius:999px;
+  font-weight:bold;
+  margin-top:5px;
+  cursor:pointer;
+}
+.erro{
+  display:block;
+  color:#a33;
+  font-size:12px;
+  margin-top:12px;
+}
+
+.admin{
+  display:none;
+  min-height:100vh;
+  grid-template-columns:260px 1fr;
+}
+.sidebar{
+  background:#fffaf6;
+  border-right:1px solid var(--borda);
+  padding:22px;
+  position:sticky;
+  top:0;
+  height:100vh;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:24px;
+}
+.brand img{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+}
+.brand h2{
+  font-family:Georgia,serif;
+  color:var(--verde-escuro);
+  font-size:25px;
+  line-height:1;
+}
+.brand span{
+  font-size:11px;
+  color:#81756a;
+}
+.menu{
+  display:grid;
+  gap:9px;
+}
+.menu button{
+  border:0;
+  background:transparent;
+  color:var(--marrom);
+  padding:13px 14px;
+  border-radius:16px;
+  text-align:left;
+  cursor:pointer;
+  font-weight:600;
+  transition:.2s;
+}
+.menu button:hover,
+.menu button.active{
+  background:var(--verde-claro);
+  color:var(--verde-escuro);
+}
+.menu .sair{
+  background:#f4e4df;
+  color:#9b3b2d;
+  margin-top:12px;
+}
+
+.content{
+  padding:28px;
+}
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:22px;
+  background:white;
+  border:1px solid var(--borda);
+  border-radius:24px;
+  padding:18px 22px;
+  box-shadow:0 8px 25px rgba(72,55,34,.06);
+}
+.topbar h1{
+  font-family:Georgia,serif;
+  color:var(--verde-escuro);
+  font-size:32px;
+}
+.topbar a{
+  color:var(--verde);
+  text-decoration:none;
+  font-weight:bold;
+  font-size:13px;
+}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  margin-bottom:20px;
+}
+.card{
+  background:white;
+  border:1px solid var(--borda);
+  border-radius:24px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(72,55,34,.06);
+}
+.card b{
+  display:block;
+  color:var(--verde-escuro);
+  font-size:34px;
+}
+.card span{
+  font-size:12px;
+  color:#786e64;
+}
+.aba{display:none}
+.aba.active{display:block}
+.panel{
+  background:white;
+  border:1px solid var(--borda);
+  border-radius:26px;
+  padding:22px;
+  box-shadow:0 8px 24px rgba(72,55,34,.06);
+  margin-bottom:18px;
+}
+.panel h2{
+  font-family:Georgia,serif;
+  color:var(--verde-escuro);
+  font-size:28px;
+  margin-bottom:14px;
+}
+.form-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+.form-grid input,
+.form-grid textarea,
+.form-grid select,
+.panel input,
+.panel textarea{
+  width:100%;
+  padding:14px;
+  border:1px solid var(--borda);
+  border-radius:16px;
+  background:#fffaf6;
+  outline:none;
+  font-family:Arial,sans-serif;
+}
+.form-grid textarea,
+.panel textarea{
+  min-height:85px;
+  resize:vertical;
+  grid-column:1/-1;
+}
+.btn{
+  border:0;
+  background:var(--verde);
+  color:white;
+  border-radius:999px;
+  padding:13px 22px;
+  font-weight:bold;
+  margin-top:13px;
+  cursor:pointer;
+}
+.btn.light{
+  background:#fffaf6;
+  color:var(--verde);
+  border:1px solid var(--borda);
+}
+.list{
+  display:grid;
+  gap:12px;
+}
+.item{
+  display:grid;
+  grid-template-columns:74px 1fr auto;
+  gap:13px;
+  align-items:center;
+  background:white;
+  border:1px solid var(--borda);
+  border-radius:22px;
+  padding:12px;
+  box-shadow:0 6px 18px rgba(72,55,34,.05);
+}
+.item img{
+  width:74px;
+  height:74px;
+  object-fit:cover;
+  border-radius:18px;
+  background:#eee3d3;
+}
+.item b{
+  display:block;
+  color:var(--verde-escuro);
+  font-size:14px;
+  margin-bottom:4px;
+}
+.item small{
+  color:#70665b;
+  font-size:12px;
+}
+.item-actions{
+  display:flex;
+  gap:6px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.item-actions button{
+  border:0;
+  border-radius:999px;
+  padding:9px 12px;
+  background:#f0e5d7;
+  color:var(--verde-escuro);
+  font-weight:bold;
+  cursor:pointer;
+}
+.item-actions .danger{
+  background:#f3dfdc;
+  color:#9c352e;
+}
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:13px;
+}
+.gallery-card{
+  background:white;
+  border:1px solid var(--borda);
+  border-radius:22px;
+  padding:10px;
+  box-shadow:0 6px 18px rgba(72,55,34,.05);
+}
+.gallery-card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:16px;
+  background:#eee3d3;
+}
+.gallery-card button{
+  width:100%;
+  border:0;
+  background:#f3dfdc;
+  color:#9c352e;
+  border-radius:999px;
+  padding:10px;
+  margin-top:9px;
+  font-weight:bold;
+  cursor:pointer;
+}
+.aviso{
+  background:#fff8df;
+  border:1px solid #eadca9;
+  border-radius:18px;
+  padding:14px;
+  font-size:13px;
+  line-height:1.6;
+  color:#6b5b28;
+}
+
+@media(max-width:900px){
+  .admin{grid-template-columns:1fr}
+  .sidebar{
+    height:auto;
+    position:static;
+    border-right:0;
+    border-bottom:1px solid var(--borda);
+  }
+  .menu{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .content{padding:16px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .form-grid{grid-template-columns:1fr}
+  .item{grid-template-columns:62px 1fr}
+  .item-actions{grid-column:1/-1;justify-content:flex-start}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+
+<body>
+
+<section id="login" class="login-page">
+  <div class="login-card">
+    
+    <h1>Admin Decoralma</h1>
+    <p>Gerencie produtos, destaques, acessórios, inspire-se e capa do site.</p>
+    <input id="usuario" placeholder="Usuário">
+    <input id="senha" type="password" placeholder="Senha">
+    <button onclick="entrar()">Entrar</button>
+    <small id="erroLogin" class="erro"></small>
+  </div>
+</section>
+
+<section id="admin" class="admin">
+  <aside class="sidebar">
+    <div class="brand">
+      
+      <div>
+        <h2>Decoralma</h2>
+        <span>Painel administrativo</span>
+      </div>
+    </div>
+
+    <div class="menu">
+      <button class="active" onclick="abrirAba('dashboard',this)">🏠 Dashboard</button>
+      <button onclick="abrirAba('produtos',this)">📦 Produtos</button>
+      <button onclick="abrirAba('destaques',this)">⭐ Nossos Destaques</button>
+      <button onclick="abrirAba('acessorios',this)">🎨 Acessórios</button>
+      <button onclick="abrirAba('inspire',this)">✨ Inspire-se</button>
+      <button onclick="abrirAba('capa',this)">🖼️ Capa</button>
+      <button onclick="abrirAba('pedidos',this)">📋 Pedidos</button>
+      <button class="sair" onclick="sair()">Sair</button>
+    </div>
+  </aside>
+
+  <main class="content">
+    <div class="topbar">
+      <h1 id="tituloAba">Dashboard</h1>
+      
+    </div>
+
+    <section id="dashboard" class="aba active">
+      <div class="cards">
+        <div class="card"><b id="qtdProdutos">0</b><span>Produtos</span></div>
+        <div class="card"><b id="qtdDestaques">0</b><span>Destaques</span></div>
+        <div class="card"><b id="qtdAcessorios">0</b><span>Acessórios</span></div>
+        <div class="card"><b id="qtdInspire">0</b><span>Inspire-se</span></div>
+      </div>
+      <div class="panel">
+        <h2>Bem-vinda ao painel 🌿</h2>
+        <p>Use o menu ao lado para adicionar produtos, editar a capa, mudar imagens e remover itens do site.</p>
+      </div>
+      <div class="aviso">
+        As alterações são salvas pelo backend em <b>data.json</b>. Para aparecer no site dos clientes, o site precisa carregar os dados da API.
+      </div>
+    </section>
+
+    <section id="produtos" class="aba">
+      <div class="panel">
+        <h2>Adicionar produto</h2>
+        <div class="form-grid">
+          <input id="prodNome" placeholder="Nome do produto">
+          <input id="prodPreco" placeholder="Preço: R$ 189,90">
+          <input id="prodImg" type="file" accept="image/*">
+          <select id="prodColecao"></select>
+        </div>
+        <button class="btn" onclick="adicionarProduto()">Adicionar produto</button>
+      </div>
+      <div id="listaProdutos" class="list"></div>
+    </section>
+
+    <section id="destaques" class="aba">
+      <div class="panel">
+        <h2>Nossos Destaques / Coleções</h2>
+        <div class="form-grid">
+          <input id="colNome" placeholder="Nome da aba/destaque">
+          <input id="colIcone" placeholder="Ícone: ❧">
+          <input id="colImg" type="file" accept="image/*">
+          <textarea id="colDesc" placeholder="Descrição"></textarea>
+        </div>
+        <button class="btn" onclick="adicionarColecao()">Adicionar destaque</button>
+      </div>
+      <div id="listaColecoes" class="list"></div>
+    </section>
+
+    <section id="acessorios" class="aba">
+      <div class="panel">
+        <h2>Acessórios</h2>
+        <div class="form-grid">
+          <input id="aceNome" placeholder="Nome do acessório">
+          <input id="acePreco" placeholder="Preço">
+          <input id="aceImg" type="file" accept="image/*">
+        </div>
+        <button class="btn" onclick="adicionarAcessorio()">Adicionar acessório</button>
+      </div>
+      <div id="listaAcessorios" class="list"></div>
+    </section>
+
+    <section id="inspire" class="aba">
+      <div class="panel">
+        <h2>Inspire-se</h2>
+        <input id="inspImg" type="file" accept="image/*">
+        <button class="btn" onclick="adicionarInspire()">Adicionar imagem</button>
+      </div>
+      <div id="listaInspire" class="gallery"></div>
+    </section>
+
+    <section id="capa" class="aba">
+      <div class="panel">
+        <h2>Capa do site</h2>
+        <textarea id="heroTitulo" placeholder="Título da capa"></textarea>
+        <textarea id="heroTexto" placeholder="Texto da capa"></textarea>
+        <input id="heroImg" type="file" accept="image/*">
+        <button class="btn" onclick="salvarCapa()">Salvar capa</button>
+      </div>
+    </section>
+
+    <section id="pedidos" class="aba">
+      <div class="panel">
+        <h2>Pedidos</h2>
+        <p>Quando o checkout for conectado ao backend, os pedidos aparecerão aqui.</p>
+      </div>
+      <div id="listaPedidos" class="list"></div>
+    </section>
+  </main>
+</section>
+
+<script>
+
+function fileToDataUrl(input){
+ return new Promise((resolve)=>{
+   const f=input.files&&input.files[0];
+   if(!f){resolve('');return;}
+   const r=new FileReader();
+   r.onload=e=>resolve(e.target.result);
+   r.readAsDataURL(f);
+ });
+}
+
+const API='/api/site-data';
+const USER='admin';
+const PASS='decoralma123';
+let dados={
+  hero:{titulo:'Decoração<br>com sua<br>assinatura',texto:'',img:''},
+  produtos:[],
+  colecoes:[],
+  acessorios:[],
+  inspire:[],
+  pedidos:[]
+};
+
+function entrar(){
+  const u=document.getElementById('usuario').value.trim();
+  const s=document.getElementById('senha').value.trim();
+  if(u===USER && s===PASS){
+    sessionStorage.setItem('decoralmaAdmin','ok');
+    document.getElementById('login').style.display='none';
+    document.getElementById('admin').style.display='grid';
+    carregar();
+  }else{
+    document.getElementById('erroLogin').innerText='Usuário ou senha incorretos.';
+  }
+}
+
+function sair(){
+  sessionStorage.removeItem('decoralmaAdmin');
+  location.reload();
+}
+
+if(sessionStorage.getItem('decoralmaAdmin')==='ok'){
+  setTimeout(()=>{
+    document.getElementById('login').style.display='none';
+    document.getElementById('admin').style.display='grid';
+    carregar();
+  },100);
+}
+
+function abrirAba(id,btn){
+  document.querySelectorAll('.aba').forEach(a=>a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+
+  const nomes={
+    dashboard:'Dashboard',
+    produtos:'Produtos',
+    destaques:'Nossos Destaques',
+    acessorios:'Acessórios',
+    inspire:'Inspire-se',
+    capa:'Capa',
+    pedidos:'Pedidos'
+  };
+  document.getElementById('tituloAba').innerText=nomes[id]||'Admin';
+  render();
+}
+
+async function carregar(){
+  try{
+    const r=await fetch(API);
+    if(r.ok){
+      dados=await r.json();
+      dados.produtos=dados.produtos||[];
+      dados.colecoes=dados.colecoes||[];
+      dados.acessorios=dados.acessorios||[];
+      dados.inspire=dados.inspire||[];
+      dados.pedidos=dados.pedidos||[];
+      dados.hero=dados.hero||{};
+    }
+  }catch(e){
+    console.log('API offline');
+  }
+  preencherCapa();
+  render();
+}
+
+async function salvar(){
+  try{
+    await fetch(API,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify(dados)
+    });
+  }catch(e){
+    alert('Não consegui salvar no backend. Verifique o Render.');
+  }
+  render();
+}
+
+function img(src){
+  return src || 'https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=700&q=80';
+}
+
+function render(){
+  document.getElementById('qtdProdutos').innerText=dados.produtos.length;
+  document.getElementById('qtdDestaques').innerText=dados.colecoes.length;
+  document.getElementById('qtdAcessorios').innerText=dados.acessorios.length;
+  document.getElementById('qtdInspire').innerText=dados.inspire.length;
+
+  document.getElementById('prodColecao').innerHTML=
+    dados.colecoes.map((c,i)=>`<option value="${i}">${c.nome}</option>`).join('') ||
+    '<option value="0">Sem destaque</option>';
+
+  listaProdutos.innerHTML=dados.produtos.map((p,i)=>`
+    <div class="item">
+      <img src="${img(p.img)}">
+      <div>
+        <b>${p.nome}</b>
+        <small>${p.preco || ''} • ${(dados.colecoes[p.colecao]||{}).nome || 'Sem destaque'}</small>
+      </div>
+      <div class="item-actions">
+        <button onclick="editarProduto(${i})">Editar</button>
+        <button class="danger" onclick="removerProduto(${i})">Remover</button>
+      </div>
+    </div>
+  `).join('');
+
+  listaColecoes.innerHTML=dados.colecoes.map((c,i)=>`
+    <div class="item">
+      <img src="${img(c.img)}">
+      <div>
+        <b>${c.nome}</b>
+        <small>${c.desc || ''}</small>
+      </div>
+      <div class="item-actions">
+        <button onclick="editarColecao(${i})">Editar</button>
+        <button class="danger" onclick="removerColecao(${i})">Remover</button>
+      </div>
+    </div>
+  `).join('');
+
+  listaAcessorios.innerHTML=dados.acessorios.map((p,i)=>`
+    <div class="item">
+      <img src="${img(p.img)}">
+      <div>
+        <b>${p.nome}</b>
+        <small>${p.preco || ''}</small>
+      </div>
+      <div class="item-actions">
+        <button onclick="editarAcessorio(${i})">Editar</button>
+        <button class="danger" onclick="removerAcessorio(${i})">Remover</button>
+      </div>
+    </div>
+  `).join('');
+
+  listaInspire.innerHTML=dados.inspire.map((p,i)=>`
+    <div class="gallery-card">
+      <img src="${img(p)}">
+      <button onclick="removerInspire(${i})">Remover</button>
+    </div>
+  `).join('');
+
+  listaPedidos.innerHTML=(dados.pedidos||[]).map((p,i)=>`
+    <div class="item">
+      <img src="logo.jpeg">
+      <div>
+        <b>Pedido ${i+1}</b>
+        <small>${p.nome || 'Cliente'} • ${p.total || ''}</small>
+      </div>
+      <div class="item-actions">
+        <button class="danger" onclick="removerPedido(${i})">Remover</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function limpar(ids){
+  ids.forEach(id=>document.getElementById(id).value='');
+}
+
+async function adicionarProduto(){
+  dados.produtos.push({
+    nome:prodNome.value||'Novo produto',
+    preco:prodPreco.value||'R$ 0,00',
+    img:await fileToDataUrl(prodImg),
+    colecao:Number(prodColecao.value||0)
+  });
+  limpar(['prodNome','prodPreco','prodImg']);
+  await salvar();
+}
+
+async function editarProduto(i){
+  const p=dados.produtos[i];
+  const nome=prompt('Nome:',p.nome); if(nome===null)return;
+  const preco=prompt('Preço:',p.preco); if(preco===null)return;
+  const imagem=prompt('Imagem:',p.img); if(imagem===null)return;
+  p.nome=nome;p.preco=preco;p.img=imagem;
+  await salvar();
+}
+
+async function removerProduto(i){
+  if(confirm('Remover este produto?')){
+    dados.produtos.splice(i,1);
+    await salvar();
+  }
+}
+
+async function adicionarColecao(){
+  dados.colecoes.push({
+    nome:colNome.value||'Novo destaque',
+    icone:colIcone.value||'❧',
+    img:await fileToDataUrl(colImg),
+    desc:colDesc.value||''
+  });
+  limpar(['colNome','colIcone','colImg','colDesc']);
+  await salvar();
+}
+
+async function editarColecao(i){
+  const c=dados.colecoes[i];
+  const nome=prompt('Nome:',c.nome); if(nome===null)return;
+  const desc=prompt('Descrição:',c.desc||''); if(desc===null)return;
+  const imagem=prompt('Imagem:',c.img||''); if(imagem===null)return;
+  c.nome=nome;c.desc=desc;c.img=imagem;
+  await salvar();
+}
+
+async function removerColecao(i){
+  if(confirm('Remover este destaque?')){
+    dados.colecoes.splice(i,1);
+    await salvar();
+  }
+}
+
+async function adicionarAcessorio(){
+  dados.acessorios.push({
+    nome:aceNome.value||'Novo acessório',
+    preco:acePreco.value||'R$ 0,00',
+    img:await fileToDataUrl(aceImg)
+  });
+  limpar(['aceNome','acePreco','aceImg']);
+  await salvar();
+}
+
+async function editarAcessorio(i){
+  const p=dados.acessorios[i];
+  const nome=prompt('Nome:',p.nome); if(nome===null)return;
+  const preco=prompt('Preço:',p.preco); if(preco===null)return;
+  const imagem=prompt('Imagem:',p.img); if(imagem===null)return;
+  p.nome=nome;p.preco=preco;p.img=imagem;
+  await salvar();
+}
+
+async function removerAcessorio(i){
+  if(confirm('Remover este acessório?')){
+    dados.acessorios.splice(i,1);
+    await salvar();
+  }
+}
+
+async function adicionarInspire(){
+  if(!inspImg.value) return alert('Coloque uma imagem.');
+  dados.inspire.push(await fileToDataUrl(inspImg));
+  limpar(['inspImg']);
+  await salvar();
+}
+
+async function removerInspire(i){
+  dados.inspire.splice(i,1);
+  await salvar();
+}
+
+function preencherCapa(){
+  heroTitulo.value=(dados.hero.titulo||'').replace(/<br\s*\/?>/gi,'\n');
+  heroTexto.value=dados.hero.texto||'';
+  heroImg.value=dados.hero.img||'';
+}
+
+async function salvarCapa(){
+  dados.hero.titulo=(heroTitulo.value||'').replace(/\n/g,'<br>');
+  dados.hero.texto=heroTexto.value||'';
+  dados.hero.img=await fileToDataUrl(heroImg);
+  await salvar();
+  alert('Capa salva!');
+}
+
+async function removerPedido(i){
+  if(confirm('Remover pedido?')){
+    dados.pedidos.splice(i,1);
+    await salvar();
+  }
+}
+</script>
+
+</body>
+</html>
