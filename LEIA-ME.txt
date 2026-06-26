@@ -1,0 +1,29 @@
+DECORALMA ADMIN - JEITO SIMPLES IGUAL ACÁCIA
+
+Envie TODOS estes arquivos para a raiz do repositório GitHub:
+- index.html
+- admin.html
+- server.js
+- package.json
+- data.json
+- logo.jpeg
+- topo.jpeg
+- destopo.jpeg
+
+Não precisa pasta public.
+
+Render:
+Build Command: npm install
+Start Command: npm start
+
+Links:
+Site: https://decoralma-2.onrender.com
+Admin: https://decoralma-2.onrender.com/admin
+
+Login:
+Usuário: admin
+Senha: decoralma123
+
+Importante:
+As imagens escolhidas pelo painel são salvas dentro do data.json como base64.
+Se o data.json ficar muito pesado, o ideal é usar armazenamento externo.
