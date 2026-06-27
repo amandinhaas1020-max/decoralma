@@ -1,12 +1,14 @@
 {
-  "name": "decoralma-produtos-fixos",
+  "name": "decoralma",
   "version": "1.0.0",
+  "description": "Backend Decoralma",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mercadopago": "^2.0.0"
   }
 }
